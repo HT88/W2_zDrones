@@ -16,6 +16,6 @@ Other than that you should use media queries. Here are the requirements for each
 - On desktops (1024px and up): a four column grid, with the exception that the first item spans two columns. - There should be some margin between the grid items
 - Make the page look beautiful by adding some more CSS! Include CSS rules for:
 
-hover states for the grid elements, to indicate to the user that they're looking at that specific drone
-A distinct font-family, found from Google Fonts. Include using the font-face rule
-Animation using transition
+- hover states for the grid elements, to indicate to the user that they're looking at that specific drone
+- A distinct font-family, found from Google Fonts. Include using the font-face rule
+- Animation using transition
