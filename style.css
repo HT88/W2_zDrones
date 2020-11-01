@@ -8,15 +8,19 @@ img {
 }
 
 @font-face {
-    font-family: 'Open Sans Condensed', sans-serif;}
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+html, body, header, main, section {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
 
 section {
     background-color: white;
-    max-width: 80%;
     margin: auto;
 }
-
-
 
 h1, h2 {
     margin: 50px;
@@ -32,43 +36,69 @@ h1, h2 {
     border-top: tomato 1px solid;
 }
 
-
-
-#grid-float .grid-item {
-    float: left;
+/**
+ * mobile
+ */
+#grid-floats {
+    width: 100%;
+    display: block;
+    margin: 0px 20px;
+}
+    
+.grid-item {
+    width: 100%;
+    display: block;
+}
+    
+/**
+ * tablet
+ */
+@media screen and (min-width: 600px) {
+    .grid-item {
+        width: 30%;
+        margin-right: 5%;
+        float: left;
+    }
+    .grid-item:nth-child(1), .grid-item:nth-child(2) {
+        width: 50%;
+    }
 }
 
-/*the NET_Ninja@https://www.youtube.com/watch?v=nE9lIRbIfI0*/
-#grid-floats:after {
-    content: "";
-    display: block;
+/**
+ * desktop
+ */
+@media screen and (min-width: 600px) {
+    .grid-item {
+        width: 21%;
+        margin: 0 2%;
+        float: left;
+    }
+
+    .grid-item:nth-child(1), .grid-item:nth-child(2) {
+        width: 46%;        
+    }
+}
+
+
+
+section:nth-child(2) {
     clear: both;
 }
+
 
 /* Hint(s) from http://www.tagindex.net/css/list/float.html*/
 ul {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    font-size: 1rem;
+    width: 100%;
 }
     
-li {
-    float: left;
-    width: 250px;
-    margin: 5px;
-    padding: 5px;
-    background-color: white;
-    text-align: center;
-    display: inline-block;
-}
-
 #grid-flex {
+    width: 100%;
     display: flex;
-    clear: both;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: center; 
     margin-bottom: 80px;
 }
 
@@ -76,42 +106,14 @@ li {
     margin-top: 200px;
 }
 
-/* Hint(s) from  https://www.youtube.com/watch?v=j1AhSWFcZpg */
-$mobile: 600px;
-$tablets: 1024px;
-$desktop: 1024px;
-
-@media screen and (max-width: mobile) {
-    
-    #grid-floats .grid-item 
-    {float: left;
-        width: 100%;}
-
-    #gird-flex .grid-item 
-    {
-        flex-direction: column;}
-    
+#grid-flex li:first-child {
+    width: calc(50% - 5px);
 }
 
 
+#grid-flex li:nth-child(n+2):nth-child(-n+11) {
 
-@media screen and (min-width: mobile) and (max-width: tablets) {
-
-    #grid-floats .grid-item li:nth-child(1), .grid-item li:nth-child(2) {
-        width: 50%;
-
-    }
-
-    .grid-item li:nth-child(n+3) {
-        width: 30%;
+    width: calc(25% - 5px);
     }
       
-}
-
-@media screen and (min-width: desktop) {
-
     
-}
-  
-  
-
